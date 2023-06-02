@@ -30,6 +30,7 @@
   "regenerate TAGS file using hasktags in the project root (found by TAGS file)"
   (start-process "*generate-hasktags*" "*generate-hasktags*" "generate-hasktags.sh"))
 
-(add-hook 'after-save-hook 'hasktags)
+(add-hook 'haskell-mode-hook
+  (lambda () (add-hook 'after-save-hook 'hasktags nil 'local)))
 (setq tags-revert-without-query 1)
 (provide 'hasktags)
