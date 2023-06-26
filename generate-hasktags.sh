@@ -39,7 +39,7 @@ exitIfPwdIsRoot() {
 # TODO maybe it would be better to check for writability of the current working directory instead
 generateTags() {
   # hasktags -e .
-  fast-tags --qualified -eR .
+  fast-tags -eR .
   # (find . -type f -name \*\.*hs | xargs hasktags -e)
 }
 
